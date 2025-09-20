@@ -1,0 +1,53 @@
+
+/*Afecta a toda la pagina*/
+body{
+    margin: 0%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*Titulo*/
+.logo{
+    margin: 0%;
+    padding: 1%;
+    color: white;
+    background-color: #2e753d;
+}
+
+.logo img{
+    width: 2%;
+    height: 2%;
+    vertical-align: top;
+}
+
+/*Barra de navegación*/
+.navbar {
+    display: flex;
+    background-color: black;
+}
+
+/*Botones de la barra de navegación*/
+.navbar a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 10px 19px;
+    text-decoration: none;
+}
+
+/*Cambio de color por links*/
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/*Link activo*/
+.navbar a.active {
+    background-color: #3b4999;
+    color: white;
+}
+
+/*Clase Centrado sencillo*/
+.center{
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
