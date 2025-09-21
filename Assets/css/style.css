@@ -2,6 +2,7 @@
 body {
     margin: 0%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color:rgb(217, 228, 200);
 }
 
 /* Estilo del logo */
@@ -42,7 +43,7 @@ body {
 
 /* Estilo para el link activo */
 .navbar a.active {
-    background-color: #3b4999;
+    background-color: #757ca1;
     color: white;
 }
 
@@ -106,17 +107,28 @@ body {
 
 /* Contenedor imagen + texto */
 .img-text-container {
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
     gap: 30px;
+    margin: 2% 5% 0 5%;
+    box-shadow: 0px 5px 5px gray;
+    border-radius: 8px;
+}
+
+/*Outline para el bloque*/
+.outline-solid{
+    width: 70%;
+    outline: solid;
 }
 
 /* Estilo del párrafo */
 .text-content {
-    max-width: 1000px;
+    max-width: 700px;
     font-size: 16px;
     line-height: 1.6;
     text-align: justify;
+    
 }
