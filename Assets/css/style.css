@@ -124,6 +124,14 @@ body {
     outline: solid;
 }
 
+.center-content{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
 /* Estilo del párrafo */
 .text-content {
     max-width: 700px;
@@ -131,4 +139,43 @@ body {
     line-height: 1.6;
     text-align: justify;
     
+}
+
+/* Contenedor login */
+.login-box {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 350px;
+    height: 300px;
+    padding: 20px;
+    margin: 2% 5% 0 5%;
+    box-shadow: 0px 5px 5px gray;
+    border-radius: 8px;
+}
+
+/*Boton*/
+.button {
+    font-weight: bold;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #2e753d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: #266133;
+}
+.my-button:active {
+    background-color: #193f21;
+}
+
+/*Caja de texto interactuable*/
+input[type=text] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  box-sizing: border-box;
 }
