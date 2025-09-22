@@ -1,23 +1,21 @@
-let usuarios = [];
+const loginLink = document.getElementById('loginLink');
+const loginStatus = document.getElementById('loginStatus');
 
-//obtener el botón y los campos de entrada
-const loginButton = document.getElementById('loginButton');
-const emailInput = document.getElementById('txtEmail');
-const passwordInput = document.getElementById('txtPassword');
+//revisar si hay usuario logeado
+document.addEventListener("DOMContentLoaded", () => {
+    const usuario = localStorage.getItem("usuarioLogeado");
+    if (usuario && loginLink && loginStatus) {
+        loginLink.textContent = "Mi Perfil";
+        loginLink.href = "#perfil";
 
-//función para registrar la información
-function registrarUsuario() {
-    const email = emailInput.value;
-    const password = passwordInput.value;
+        loginStatus.textContent = "Cerrar sesión";
+        loginStatus.style.cursor = "pointer";
 
-    //revisar llenado
-    if (email && password) {
-        console.log(`Email: ${email}`);
-        console.log(`Contraseña: ${password}`);
-
-    } else {
-        //codigo para evitar campos vacíos
-        console.log("Error, no hay campos rellenos");
+        loginStatus.addEventListener("click", () => {
+            localStorage.removeItem("usuarioLogeado");
+            loginLink.textContent = "Log-In";
+            loginLink.href = "login.html";
+            loginStatus.textContent = "Iniciar Sesión";
+        });
     }
-}
-loginButton.addEventListener('click', registrarUsuario);
+});
