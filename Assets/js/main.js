@@ -9,13 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
         loginLink.href = "#perfil";
 
         loginStatus.textContent = "Cerrar sesión";
+        loginStatus.href = "login.html";
         loginStatus.style.cursor = "pointer";
 
         loginStatus.addEventListener("click", () => {
             localStorage.removeItem("usuarioLogeado");
             loginLink.textContent = "Log-In";
             loginLink.href = "login.html";
-            loginStatus.textContent = "Iniciar Sesión";
+            loginStatus.textContent = "Registrarse";
         });
     }
 });
