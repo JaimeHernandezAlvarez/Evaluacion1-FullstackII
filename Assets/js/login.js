@@ -11,7 +11,9 @@ function registrarUsuario() {
         localStorage.setItem("usuarioLogeado", email);
         window.location.href = "index.html";
     } else {
-        console.log("Error, no hay campos rellenos");
+        if(email && !password) alert("Error, falta la contraseña");
+        else if (!email && password) alert("Error, falta el mail");
+        else alert("Error, no hay campos rellenos");
     }
 }
 
