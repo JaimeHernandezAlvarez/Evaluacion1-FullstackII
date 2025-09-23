@@ -1,53 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FeriaFind - Inicio</title>
     <link rel="stylesheet" href="./Assets/css/style.css">
 </head>
-    <body>
-        <!----> <!--Tip: Copia y pega esto en vez de escribirlo-->
+<body>
 
-        <!--Barra inicial-->
-        <div class="logo">
+    <!-- Barra inicial -->
+    <div class="logo">
+        <!-- Logo e imagen -->
+        <img src="./Assets/images/logo.png" alt="logo.png">
+        <header>
+            <h1>FeriaFind</h1>
+        </header>
 
-            <!--Logo e imagen-->
-            <img src="./Assets/images/logo.png" alt="logo.png">
-            <header>
-                <h1>
-                    FeriaFind
-                </h1>
-            </header>
-
-            <!-- Contenedor para Log-In y Iniciar Sesión -->
-            <div class="login-container">
-                <a id="loginLink" class="login-text" href="./login.html">Iniciar Sesión</a>
-                <a id="loginStatus" class="login-text" href="./register.html">Registrarse</a>
-            </div>
+        <!-- Contenedor para Log-In y Registro -->
+        <div class="login-container">
+            <a id="loginLink" class="login-text" href="./login.html">Iniciar Sesión</a>
+            <a id="loginStatus" class="login-text" href="./register.html">Registrarse</a>
         </div>
+    </div>
 
-        <!--Barra de Navegación-->
-        <nav class="navbar">
-            <a class="active" href="#inicio">Inicio</a>
-            <a href="#sobre">Sobre Nosotros</a>
-            <a href="#categorias">Categorias</a>
-            <a href="#ayuda">Ayuda</a>
-        </nav> 
+    <!-- Barra de Navegación -->
+    <nav class="navbar">
+        <a class="active" href="index.html">Inicio</a>
+        <a href="buscar.html">Buscar</a>
+        <a href="mapa.html">Mapa</a>
+        <a href="favoritos.html">Favoritos</a>
+        <a href="about.html">Sobre Nosotros</a>
+        <a href="ayuda.html">Ayuda</a>
+    </nav> 
 
-        <!--Contenido Principal de la pagina-->
-        <section>
-            <div class="img-text-container">
-                <img class="img500" src="./Assets/images/foto1.png" alt="foto1.png">
-                <p class="text-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor saepe accusantium sunt quisquam a minus facere vel. Ad perferendis in, 
-                    nesciunt consequatur corporis delectus neque dolorem dolores! Autem, odit quis? Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Labore eligendi alias dolorem excepturi. Debitis facilis, quas quam quasi eum sint consequatur itaque quidem laborum blanditiis ipsa. 
-                    Amet natus magni accusamus!
-                </p>
-            </div>
-        </section>
+    <!-- Contenido Principal -->
+    <section>
+        <div class="img-text-container">
+            <img class="img500" src="./Assets/images/foto1.png" alt="foto1.png">
+            <p class="text-content">
+                Bienvenido a <strong>FeriaFind</strong>, la plataforma donde puedes encontrar vendedores de feria,
+                comparar precios, ver calificaciones y descubrir en qué ferias estarán durante la semana.
+                Explora el mapa interactivo, guarda tus favoritos o revisa perfiles de vendedores en detalle.
+            </p>
+        </div>
+    </section>
 
-        <script src="./Assets/js/main.js"></script>
-    </body>
+    <!-- Ejemplo de categorías rápidas -->
+    <section>
+        <div class="img-text-container">
+            <h3>Categorías Populares</h3>
+            <ul>
+                <li><a href="buscar.html">Frutas</a></li>
+                <li><a href="buscar.html">Verduras</a></li>
+                <li><a href="buscar.html">Legumbres</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="./Assets/js/main.js"></script>
+</body>
 </html>
