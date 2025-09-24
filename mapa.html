@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Mapa de Vendedores</title>
-  <link rel="stylesheet" href="./Assets/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./Assets/css/style.css" />
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
   <header class="logo">
-    <img src="./Assets/images/logo.png" alt="Logo" height="40">
-    <header>
-            <h1>FeriaFind</h1>
-    </header>
+    <img src="./Assets/images/logo.png" alt="Logo" height="40" />
+    <header><h1>FeriaFind</h1></header>
     <div class="login-container">
-      <!-- Contenedor para Log-In y Registro -->
-      <div class="login-container">
-        <a id="loginLink" class="login-text" href="./login.html">Iniciar Sesión</a>
-        <a id="loginStatus" class="login-text" href="./register.html">Registrarse</a>
-      </div>
+      <a id="loginLink" class="login-text" href="./login.html">Iniciar Sesión</a>
+      <a id="loginStatus" class="login-text" href="./register.html">Registrarse</a>
     </div>
   </header>
+
   <nav class="navbar">
     <a href="index.html">Inicio</a>
     <a href="buscar.html">Buscar</a>
     <a href="mapa.html" class="active">Mapa</a>
     <a href="favoritos.html">Favoritos</a>
   </nav>
+
   <main>
     <section class="img-text-container">
       <h3>Mapa de vendedores</h3>
       <div id="map" class="outline-solid" style="height:400px;"></div>
     </section>
   </main>
+
   <script src="./Assets/js/main.js"></script>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- Datos y script del mapa -->
+  <script src="./Assets/js/vendedores.js"></script>
+  <script src="./Assets/js/mapa.js"></script>
 </body>
 </html>
