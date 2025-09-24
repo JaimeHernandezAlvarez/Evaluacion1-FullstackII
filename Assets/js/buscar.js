@@ -1,12 +1,14 @@
-(function () {
+(() => {
     const $ = (s, c = document) => c.querySelector(s);
-    const $$ = (s, c = document) => [...c.querySelectorAll(s)];
-  
     const input = $("#searchBox");
-    const btn   = document.querySelector(".button");
-    const box   = $("#resultados");
+    const btn = $("#btnBuscar") || $(".button");
+    const box = $("#resultados");
   
-    const CLP = v => new Intl.NumberFormat("es-CL",{style:"currency",currency:"CLP"}).format(v);
+    const CLP = valor =>
+      new Intl.NumberFormat("es-CL", {
+        style: "currency",
+        currency: "CLP",
+      }).format(valor);
   
     function render(lista) {
       box.innerHTML = "";
@@ -14,20 +16,44 @@
         box.innerHTML = "<p>No se encontraron resultados.</p>";
         return;
       }
-      const ul = document.createElement("ul");
-      lista.forEach(p => {
-        const li = document.createElement("li");
-        li.innerHTML = `<strong>${p.nombre}</strong> — ${CLP(p.precio)} — 
-          <em>${p.categoria}</em> — Vendedor: ${p.vendedor}`;
-        ul.appendChild(li);
+  
+      lista.forEach((p) => {
+        const card = document.createElement("div");
+        card.style.cssText = `
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          margin-bottom: 20px;
+          background: white;
+          padding: 10px 15px;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        `;
+  
+        const img = document.createElement("img");
+        img.src = p.imagen;
+        img.alt = p.nombre;
+        img.width = 100;
+        img.style.borderRadius = "6px";
+  
+        const texto = document.createElement("div");
+        texto.innerHTML = `
+          <strong>${p.nombre}</strong><br>
+          Precio: ${CLP(p.precio)}<br>
+          Categoría: ${p.categoria}<br>
+          Vendedor: ${p.vendedor}
+        `;
+  
+        card.appendChild(img);
+        card.appendChild(texto);
+        box.appendChild(card);
       });
-      box.appendChild(ul);
     }
   
     function filtrar() {
-      const q = (input.value || "").trim().toLowerCase();
-      if (!q) { render(window.PRODUCTOS); return; }
-      const out = window.PRODUCTOS.filter(p =>
+      const q = (input?.value || "").trim().toLowerCase();
+      if (!q) return render(window.PRODUCTOS || []);
+      const out = (window.PRODUCTOS || []).filter((p) =>
         p.nombre.toLowerCase().includes(q) ||
         p.categoria.toLowerCase().includes(q) ||
         p.vendedor.toLowerCase().includes(q)
@@ -35,11 +61,11 @@
       render(out);
     }
   
-    // eventos
     btn?.addEventListener("click", filtrar);
-    input?.addEventListener("keydown", e => { if (e.key === "Enter") filtrar(); });
+    input?.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") filtrar();
+    });
   
-    // primera carga
-    render(window.PRODUCTOS);
+    render(window.PRODUCTOS || []);
   })();
   
