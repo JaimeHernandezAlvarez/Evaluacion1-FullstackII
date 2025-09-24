@@ -171,14 +171,6 @@ body {
     background-color: #193f21;
 }
 
-/*Caja de texto interactuable*/
-input[type=text] {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  box-sizing: border-box;
-}
-
 /*Mensaje de error*/
 .error-message {
     color: red;
