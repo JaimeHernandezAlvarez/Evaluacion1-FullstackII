@@ -178,3 +178,10 @@ input[type=text] {
   margin: 10px 0;
   box-sizing: border-box;
 }
+
+/*Mensaje de error*/
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+}

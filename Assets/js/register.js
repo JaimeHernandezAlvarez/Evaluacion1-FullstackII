@@ -5,38 +5,64 @@ const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 const confirmPasswordInput = document.getElementById("confirmPassword");
 
-// Función para mostrar mensajes de error
-function mostrarError(mensaje) {
-    alert(mensaje); // Puedes cambiar por mensajes en el HTML si quieres
+// Obtener los elementos donde se mostrarán los errores
+const nombreError = document.getElementById("nombreError");
+const emailError = document.getElementById("emailError");
+const passwordError = document.getElementById("passwordError");
+const confirmPasswordError = document.getElementById("confirmPasswordError");
+
+// Función para mostrar los mensajes de error
+function mostrarError(campoError, mensaje) {
+    campoError.textContent = mensaje;  // Asignar el mensaje al campo de error
+    campoError.style.display = "block";  // Mostrar el mensaje
+}
+
+// Función para ocultar los mensajes de error
+function ocultarError(campoError) {
+    campoError.textContent = '';  // Limpiar el mensaje
+    campoError.style.display = "none";  // Ocultar el mensaje
 }
 
 // Función de registro
-function registrarUsuario() {
+function registrarUsuario(event) {
+    event.preventDefault();  // Prevenir el comportamiento por defecto del formulario (si es necesario)
+
     const nombre = nombreInput.value.trim();
     const email = emailInput.value.trim();
     const password = passwordInput.value;
     const confirmPassword = confirmPasswordInput.value;
 
+    // Ocultar los mensajes de error al inicio
+    ocultarError(nombreError);
+    ocultarError(emailError);
+    ocultarError(passwordError);
+    ocultarError(confirmPasswordError);
+
     // Validaciones
-    if (!nombre || !email || !password || !confirmPassword) {
-        mostrarError("Por favor, complete todos los campos.");
-        return;
+    let valid = true;
+
+    if (!nombre) {
+        mostrarError(nombreError, "Por favor, ingrese un nombre de usuario.");
+        valid = false;
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        mostrarError("Ingrese un correo electrónico válido.");
-        return;
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        mostrarError(emailError, "Ingrese un correo electrónico válido.");
+        valid = false;
     }
 
     if (password.length < 6) {
-        mostrarError("La contraseña debe tener al menos 6 caracteres.");
-        return;
+        mostrarError(passwordError, "La contraseña debe tener al menos 6 caracteres.");
+        valid = false;
     }
 
     if (password !== confirmPassword) {
-        mostrarError("Las contraseñas no coinciden.");
-        return;
+        mostrarError(confirmPasswordError, "Las contraseñas no coinciden.");
+        valid = false;
+    }
+
+    if (!valid) {
+        return;  // Si hay errores, no continuar con el registro
     }
 
     // Guardar usuario en localStorage
