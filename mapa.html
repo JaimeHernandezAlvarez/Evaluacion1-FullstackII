@@ -28,6 +28,34 @@
   <main>
     <section class="img-text-container">
       <h3>Mapa de vendedores</h3>
+
+      <!-- Controles de filtro -->
+      <div class="login-box" style="margin-bottom:12px;">
+        <div style="display:grid;gap:8px;grid-template-columns:1fr 1fr;">
+          <div>
+            <label for="dia" style="display:block;margin-bottom:6px;">Día</label>
+            <select id="dia" style="width:100%;padding:8px;border-radius:6px;">
+              <option value="todos">Todos</option>
+              <option value="hoy">Hoy</option>
+              <option>Lunes</option><option>Martes</option><option>Miércoles</option>
+              <option>Jueves</option><option>Viernes</option><option>Sábado</option><option>Domingo</option>
+            </select>
+          </div>
+          <div>
+            <label for="rubro" style="display:block;margin-bottom:6px;">Rubro</label>
+            <select id="rubro" style="width:100%;padding:8px;border-radius:6px;">
+              <option value="todos">Todos</option>
+              <option>Verduras</option><option>Frutas</option>
+              <option>Hortalizas</option><option>Legumbres</option>
+            </select>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:8px;">
+          <button class="button" id="aplicarFiltro">Aplicar</button>
+          <button class="button" id="miUbicacion">Mi ubicación</button>
+        </div>
+      </div>
+
       <div id="map" class="outline-solid" style="height:400px;"></div>
     </section>
   </main>
