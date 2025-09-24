@@ -4,37 +4,38 @@
   <meta charset="UTF-8">
   <title>Buscar Productos</title>
   <link rel="stylesheet" href="./Assets/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
   <header class="logo">
     <img src="./Assets/images/logo.png" alt="Logo" height="40">
-    <header>
-            <h1>FeriaFind</h1>
-
-            
-    </header>
-    <!-- Contenedor para Log-In y Registro -->
+    <header><h1>FeriaFind</h1></header>
     <div class="login-container">
       <a id="loginLink" class="login-text" href="./login.html">Iniciar Sesión</a>
       <a id="loginStatus" class="login-text" href="./register.html">Registrarse</a>
     </div>
   </header>
+
   <nav class="navbar">
     <a href="index.html">Inicio</a>
     <a href="buscar.html" class="active">Buscar</a>
     <a href="mapa.html">Mapa</a>
     <a href="favoritos.html">Favoritos</a>
   </nav>
+
   <main>
     <section class="login-box">
       <h3>Buscar Productos</h3>
       <input type="text" placeholder="Ej: tomates, papas..." id="searchBox">
-      <button class="button">Buscar</button>
+      <button class="button" id="btnBuscar">Buscar</button>
     </section>
-    <section class="img-text-container">
-      <h4>Resultados de la búsqueda aparecerán aquí...</h4>
-    </section>
+
+    <!-- contenedor resultados -->
+    <section class="img-text-container" id="resultados"></section>
   </main>
+
   <script src="./Assets/js/main.js"></script>
+  <script src="./Assets/js/productos.js"></script>
+  <script src="./Assets/js/buscar.js"></script>
 </body>
 </html>
